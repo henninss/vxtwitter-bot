@@ -10,9 +10,7 @@ VX_TWITTER_BASE_URL = "https://vxtwitter.com/"
 LINK_REPLACEMENTS = [
     ("https://twitter", "https://vxtwitter"),
     ("https://x.com", "https://vxtwitter.com"),
-    ("https://www.instagram", "https://ddinstagram"),
-    ("https://www.tiktok.com", "https://vm.dstn.to"),
-    ("https://vm.tiktok.com", "https://vm.dstn.to")
+    ("https://www.instagram", "https://kkinstagram"),
 ]
 
 
