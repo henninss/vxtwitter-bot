@@ -30,7 +30,9 @@ class UndoButton(d.ui.Button):
             return
         
         original_poster = interaction.message.content.split("sent by: ", 1)[1]
-        if str(interaction.user) != original_poster:
+        if interaction.user is None:
+            return
+        if str(interaction.user.global_name) != original_poster:
             return
 
         delete = DeleteButton()
@@ -58,7 +60,9 @@ class DeleteButton(d.ui.Button):
             return
         
         original_poster = interaction.message.content.split("sent by: ", 1)[1]
-        if str(interaction.user) != original_poster:
+        if interaction.user is None:
+            return
+        if str(interaction.user.global_name) != original_poster:
             return
         
         await interaction.message.delete()
@@ -109,7 +113,7 @@ async def link_replace(message: d.Message) -> None:
     for replacement_pair in LINK_REPLACEMENTS:
         print(f"Checking if {replacement_pair[0]} is in: {message.content}")
         if replacement_pair[0] in message.content:
-            reply_content = message.content.replace(replacement_pair[0], replacement_pair[1]) + " sent by: " + str(message.author)
+            reply_content = message.content.replace(replacement_pair[0], replacement_pair[1]) + " sent by: " + str(message.author.global_name)
             print("Found a replacement")
 
             # Remove the @everyone and @here as to not allow for unauthorized use
