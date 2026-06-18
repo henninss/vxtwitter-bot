@@ -12,5 +12,3 @@ The bot itself is built using Pycord. I have not tested the bot with any permiss
     pip install -r requirements.txt
 
 Put the token of your bot in `token.dat`
-
-(If you have any suggestions or issues, please send them to me on Discord: `emas`)
